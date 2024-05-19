@@ -1,0 +1,12 @@
+<div class="search"> 
+    <div class="title">
+            Academe courses
+    </div>
+    <input class="icon"  type="text" placeholder="search" [(ngModel)]="itemSearch" (keyup)="print(itemSearch)">
+    <div class="list" *ngIf="showList">
+        <div *ngFor="let listactive of listActive ">
+            <button class="btn_his" (click)="routeToList(listactive)"><span><i class="fa-solid fa-clock-rotate-left"></i></span>    {{listactive.name}} </button>
+        </div>
+    </div>
+</div>
+

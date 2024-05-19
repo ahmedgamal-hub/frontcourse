@@ -1,0 +1,33 @@
+<div class="courses">
+<div class="sup_header">
+    <input class="icon"  type="text" placeholder="search" [(ngModel)]="itemSearch" (keyup)="search(itemSearch)">
+    <div class="list" *ngIf="showList">
+        <div *ngFor="let listactive of listActive ">
+            <button class="btn_his" (click)="recommendCourses(listactive.name)"><span><i class="fa-solid fa-clock-rotate-left"></i></span>    {{listactive.name}} </button>
+        </div>                                                      
+    </div>
+</div>
+<div class="courses_content">
+    <div class="card" *ngFor="let course of courses">
+        <div class="cover" style="background-image: url({{course.cover}});">
+           
+     
+        </div>
+        <div class="des_course">
+            <button (click)="goToDesc(course.id , course.category)">
+                <h2 class="name">{{course.courseName}}</h2>
+            </button>
+            
+            <p class="constractor_name"> {{course.constractor}}</p>
+            <p class="des"> {{course.des}}</p>
+            <div class="rate">
+                <i class="fa-solid fa-star rat"></i> <span>{{course.rate}}</span>
+            </div>
+            <p class="hint">
+                Beginner · Professional Certificate · 3 - 6 Months
+            </p>
+
+        </div>
+    </div>
+</div>
+</div>

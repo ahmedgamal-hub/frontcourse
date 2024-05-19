@@ -1,0 +1,57 @@
+header{
+    //background-color: #00779f;
+    position: relative;
+}
+.header_container{
+
+    width: 90%;
+   // height: 50px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+ 
+    .logo{
+        cursor: pointer;
+        font-size: 30px;
+        width: fit-content;
+       // font-weight: 600;
+        background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    
+    }
+    .profaile{
+        .btn_profaile_photo{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-image: url("../assets/images/nav/Default_pfp.svg.png");
+            background-size: cover;
+            cursor: pointer;
+        }
+        .profaile_list{
+            position: absolute;
+            right: 0;
+            top: 70px;
+            width: 200px;
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            .info{
+                text-align: center;
+                border-bottom: 1px solid gray;
+            }
+            .action{
+                margin: 10px 0;
+                .logout{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+// .main_home{
+//     height: calc(100vh - 50px);
+// }

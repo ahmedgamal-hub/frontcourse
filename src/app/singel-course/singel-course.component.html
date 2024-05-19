@@ -1,0 +1,363 @@
+<div class="singel_course">
+    <div class="cover" style="background-image: url({{booksProdectDetalis[0].coverPath}}); background-position: center; background-size: cover;height:80vh;">
+        <div class="cover_content">
+            <div class="auter_reviews">
+                <div class="">
+                    <!-- {{ coverInfo.productsName }} -->
+                    <h2 class="caver_title">{{ booksProdectDetalis[0].productsName }}</h2>
+                    <div class="name_imge_auther">
+                   
+                  <p class="auther_name">
+                    {{ booksProdectDetalis[0].instructor }}
+                   
+                  </p>
+                  <p class="all_rate"> 
+                    <i class="fa-solid fa-star rat"></i>
+                    <i class="fa-solid fa-star rat"></i>
+                    <i class="fa-solid fa-star rat"></i>
+                    <i class="fa-solid fa-star rat"></i>
+                    <i class="fa-solid fa-star rat"></i>
+                </p>
+                <div class="icon-section">
+                    <div class="course_icon">
+                      <span class="first_icon"
+                        ><i class="covere_social fa-solid fa-thumbs-up fa-xl"></i
+                      ></span>
+                      <span
+                        ><i class="covere_social fa-solid fa-share-nodes fa-xl"></i
+                      ></span>
+                      
+                        <span>
+                          <i class="covere_social fa-solid fa-bookmark fa-xl"></i
+                        ></span>
+                     
+        
+                      <span>
+                        <i class="covere_social fa-solid fa-list-ul fa-xl"></i
+                      ></span>
+                      <span
+                        ><i
+                          class="covere_social fa-solid fa-cart-shopping fa-flip-horizontal fa-xl"
+                        ></i
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+    
+                
+              </div>
+          
+        </div>
+       
+          
+    </div>
+    <div class="course_contnt">
+        <div class="right_sec">
+            <div class="des">
+                <div
+                class=" course_DESCRIPTION"
+                id="About"
+                *ngFor="let booksDescrption of booksProdectDetalis"
+              >
+              
+                <h2 class="course_review_title" >
+                  COURSE  DESCRIPTION
+                </h2>
+                <p class="dis_section">
+                  {{ booksDescrption.productsAbout }}
+                </p>
+                <div class="we_learn " >
+                  <div class="red_bottom_left"></div>
+                  <div class="we_learn_container ">
+                    <h2 class=" we_learn_title">
+                      WHAT WILL WE LEARN
+                  </h2>
+                    <div
+                      class="we_learn_description "
+                    >
+                      <div
+                        class="description_item "
+                        *ngFor="let objectives of booksDescrption.objectives"
+                      >
+                        <i class="fa-solid fa-check item_icon"></i>
+                        <p class="item_title">{{ objectives.Text1 }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h2
+                  class=" course_review_title"
+                  
+                >
+                SKILLS YOU WILL GAIN
+                </h2>
+                <div class="objectives  tages_sectoin">
+                  <div class="tages_container"  *ngFor="let objectives of booksDescrption.skills">
+                    <p class="tages">{{objectives.Text1}}</p>
+                  </div>
+              
+                </div>
+                <!-- <h2
+                class=" course_review_title"
+                
+              >
+              COURSE VIDEOS LINK
+              </h2> -->
+              </div>
+
+
+            </div>
+            <div
+            class="instructor_container course_author"
+            
+            id="author"
+            *ngFor="let item of booksProdectDetalis[0].instructorInfo"
+          >
+            <div>
+              <h2 class="course_review_title" >
+                INSTRUCTOR
+              </h2>
+          
+              <div class="img_barent ">
+                <div class="img_container">
+          
+                  <img  class="author_img" *ngIf="item.profilePhoto else default_img" src="{{ item.profilePhoto }}" alt="" srcset="" />
+                  <ng-template #default_img>
+                    <img   class="author_img" src="../../../assets/images/img_defaults/course_list.png" alt="" srcset="" />
+          
+                  </ng-template>
+          
+                </div>
+          
+                <div class="icon_reating">
+                  <div>
+                    <h3 class="author_name">{{item.fName +" "+  item.lName}}</h3>
+                    <p class="author_Position">{{item.about}}</p>
+                  </div>
+                  <div class=" auth ">
+                    <div class=" autour_icons autour_icon" >
+                      <p>
+                        <span>
+                          <i class="ico fa-solid fa-video"></i>
+                          <!-- <i class="pi pi-video"></i> -->
+                        </span>
+                        {{item.courses}} Courses
+                      </p>
+                      <p>
+                        <span>
+                          <!-- <i class="pi-star pi"></i>  -->
+                          <i class="ico fa-regular fa-star"></i></span>
+                          {{item.rate}}Rateing
+                      </p>
+          
+                      <p>
+                        <span>
+                          <!-- <i class="pi pi-users"></i>  -->
+                          <i class="ico fa-solid fa-user-group"></i>
+                          </span
+                        >{{item.students}}
+                      </p>
+                    </div>
+                  </div>
+                  <!-- <div class="view_more_container">
+                    <button rou  class="verify_btn" routerLink="/pages/instructor/profile/{{item.id}}" >view more</button>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <!-- <div class="view_more_container">
+              <button class="verify_btn">view more</button>
+            </div> -->
+          </div>
+            <div class="related">
+              <h2 class="title">
+                Related Content
+              </h2>
+            <div class="related_container">
+              <div class="card" *ngFor="let course of coursesRelated">
+                <div class="cover" style="background-image: url({{course.cover}});">
+                   
+             
+                </div>
+                <div class="des_course">
+                    <button (click)="goToDesc(course.id)">
+                        <h2 class="name">{{course.courseName}}</h2>
+                    </button>
+                    
+                    <p class="constractor_name"> {{course.constractor}}</p>
+                    <p class="des"> {{course.des}}</p>
+                    <div class="rate">
+                        <i class="fa-solid fa-star rat"></i> <span>{{course.rate}}</span>
+                    </div>
+                    <p class="hint">
+                        Beginner · Professional Certificate · 3 - 6 Months
+                    </p>
+        
+                </div>
+            </div>
+            </div>
+            
+            </div>
+        </div>
+        <div class="left_sec">
+            <div class="right_side_part">
+                <!-- Start Buuton  -->
+                <div class="btn_start_course  ">
+                  <button
+                  (click)="routeToCourse(booksProdectDetalis[0].link)"
+                    class=" sm_response  btn_course"
+                  >
+                    <div class="  inner_btn">
+                      <div class="circle ">
+                        <div class="arrow_right"></div>
+                      </div>
+                      <div class="cont " >
+                        start coures
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              
+                <!-- End Start Buuton  -->
+                <div
+                  class="w-11 episodes_response episodes_course"
+                  
+                  *ngFor="let item of booksProdectDetalis"
+                >
+                  <div class="episodes_overlay ">
+                    <div class="episode_row ">
+                      <div class="right flex">
+                        <p>course level</p>
+                      </div>
+                      <p class="result">{{ item.levelName }}</p>
+                    </div>
+                    <div class="episode_row ">
+                      <div class="right flex">
+                        <p>course duration</p>
+                      </div>
+                      <p class="result">{{ item.duration }}</p>
+                    </div>
+                    <div class="episode_row ">
+                      <div class="right flex">
+                        <p>lectures</p>
+                      </div>
+                      <p class="result">{{ item.videoCount }}</p>
+                    </div>
+                    <div class="episode_row ">
+                      <div class="right flex">
+                        <p>quizes</p>
+                      </div>
+                      <p class="result">{{ item.totalQuizes }}</p>
+                    </div>
+                    <div class="episode_row ">
+                      <div class="right flex">
+                        <p>etc</p>
+                      </div>
+                      <p class="result">{{ item.expectedTimeCompletion }}</p>
+                    </div>
+                    <div class="episode_row ">
+                      <div class="right flex">
+                        <p>passing</p>
+                      </div>
+                      <p class="result">{{ item.level + '%' }}</p>
+                    </div>
+                  </div>
+                </div>
+                
+        
+              
+                <div class=" info_course " >
+                  <div class="info_overlay ">
+                    <div class="info_row">
+                      <img src="../../assets/images/courses/checkmark.png" class="circle">
+                      <div class="content">
+                        <p class="inner_text">
+                            %online
+                        </p>
+                        <!-- <p class="inner_text">Learn any time,any where.</p> -->
+                      </div>
+                    </div>
+                    <div class="info_row">
+                      <img src="../../assets/images/courses/checkmark.png" class="circle">
+              
+                      <div class="content">
+                        <p class="inner_text">
+                            Learn anytime, anywhere.
+                        </p>
+                        <!-- <p class="inner_text">Learn any time,any where.</p> -->
+                      </div>
+                    </div>
+                    <div class="info_row">
+                      <img src="../../assets/images/courses/checkmark.png" class="circle">
+                      <div class="content">
+                        <p class="inner_text">
+                            Flexible Deadlines
+                        </p>
+                        <!-- <p class="inner_text">Learn any time,any where.</p> -->
+                      </div>
+                    </div>
+                    <div class="info_row">
+                      <img src="../../assets/images/courses/checkmark.png" class="circle">
+                      <div class="content">
+                        <p class="inner_text">
+                            Set your own learning schedule.
+                        </p>
+                        <!-- <p class="inner_text">Learn any time,any where.</p> -->
+                      </div>
+                    </div>
+                    <div class="info_row">
+                      <img src="../../assets/images/courses/checkmark.png" class="circle">
+                      <div class="content">
+                        <p class="inner_text">
+                            Self-Paced
+                        </p>
+                        <!-- <p class="inner_text">Learn any time,any where.</p> -->
+                      </div>
+                    </div>
+                    <div class="info_row">
+                      <img src="../../assets/images/courses/checkmark.png" class="circle">
+                      <div class="content">
+                        <p class="inner_text">
+                            Progress at your own speed.
+                        </p>
+                        <!-- <p class="inner_text">Learn any time,any where.</p> -->
+                      </div>
+                    </div>
+                    <div class="info_row">
+                      <img src="../../assets/images/courses/checkmark.png" class="circle">
+                      <div class="content">
+                        <p class="inner_text">
+                            Earn and share your certificates upon completion.
+                        </p>
+                        <!-- <p class="inner_text">Learn any time,any where.</p> -->
+                      </div>
+                    </div>
+                    <div class="info_row">
+                      <img src="../../assets/images/courses/checkmark.png" class="circle">
+                      <div class="content">
+                        <p class="inner_text">
+                            Arabic Language
+                        </p>
+                        <!-- <p class="inner_text">Learn any time,any where.</p> -->
+                      </div>
+                    </div>
+                    <div class="info_row">
+                      <img src="../../assets/images/courses/checkmark.png" class="circle">
+                      <div class="content">
+                        <p class="inner_text">
+                            with key English terminologies.
+                        </p>
+                        <!-- <p class="inner_text">Learn any time,any where.</p> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+        </div>
+
+    </div>
+    <div>
+        
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="elearning">
+  <header>
+    <div class="header_container">
+      <div class="logo" (click)="goToHome()">
+        Academe courses
+      </div>
+      <div class="profaile" *ngIf="logedIn" >
+        <div class="btn_profaile_photo" (click)="togilProfaile()">
+        </div>
+        <div class="profaile_list" *ngIf="openProfaile">
+            <div class="info">
+              <p>{{email}} </p>
+              <p>{{first_name}} {{last_name}} </p>
+            </div>
+            <div class="action">
+              <p><i class="fa-solid fa-gear"></i> Setting</p>
+              <p  class="logout" (click)="logout()" ><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</p>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+  </header>
+  <div class="main_home">
+    <router-outlet></router-outlet>
+  </div>
+  
+</div>

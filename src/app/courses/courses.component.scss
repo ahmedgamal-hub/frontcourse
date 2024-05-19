@@ -1,0 +1,135 @@
+.courses{
+    width: 90%;
+    margin: auto;
+}
+.courses_content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .card{
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 80%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 25px;
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 25px;
+            padding: 2px;
+            background: linear-gradient(
+              239deg,
+        
+              #001f55,
+              #013367,
+              #046e9d,
+              #0585b2,
+              #0d99c3,
+              #1abadd,
+              #23d1f0,
+              #28dffb,
+              #2ae4ff
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box,
+              linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+          }
+          &:hover{
+            background: linear-gradient(
+                120deg,
+          
+                #001f55,
+                #013367,
+                #046e9d,
+                #0585b2,
+                #0d99c3,
+                #1abadd,
+                #23d1f0,
+              );
+            color: #fff !important;
+       
+                box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+                transform: translateY(-5px);
+       
+            button{
+                color: #fff;
+            }
+          }
+        .cover{
+            width: 25%;
+            min-height: 200px;
+            max-height: 100%;
+            border-radius: 25px;
+            background-position: center;
+            background-size: cover;
+            margin-inline-end: 20px;
+        }
+        .des_course{
+            max-width: 50%;
+            text-transform: capitalize;
+            position: relative;
+            button{
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+            .name{
+
+            }
+            .constractor_name{
+                font-size: 18px;
+                font-weight: 600;
+            }
+            .des{
+                font-size: 16px;
+                max-height: 92px;
+                overflow: hidden;
+            }
+            .rate{
+                .rat{
+                    color: #f5e50c;
+                    margin-inline-end: 5px;
+                }
+            }
+            .hint{
+                color: gray;
+                font-size: 16px;
+            }
+        }
+    }
+}
+input{
+    border-radius: 20px;
+    width: 80%;
+    height: 30px;
+    padding: 3px 25px;
+   // padding-left: 25px;
+    background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+    background-size: 20px;
+    border: 1px solid gray;
+    
+}
+.sup_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+.list{
+    padding: 3px 25px;
+    width: 80%;
+    background: #8080801a;
+    border-radius: 20px;
+    .btn_his{
+        cursor: pointer;
+        background: none !important;
+        border: none !important;
+        margin-bottom: 5px;
+        // width: 100%;
+    }
+}
